@@ -35,7 +35,8 @@ export default function App() {
         setStatus(Status.RESOLVED);
         return;
       }
-      return setStatus(Status.REJECTED);
+      setStatus(Status.REJECTED) 
+      toast.error("Please, try again")
     });
   },[searchInfo,page]);
   
@@ -79,8 +80,6 @@ export default function App() {
         )}
 
         <ToastContainer autoClose={4000} />
-        
-        {status === 'rejected' &&  toast.error("Please, try again")}
         {largeImage && <Modal image={largeImage} onClose={onCloseModal}></Modal>}
       </>
   );
